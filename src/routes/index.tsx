@@ -170,25 +170,25 @@ function Dashboard() {
       <Card className="p-6 shadow-card">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <h3 className="font-semibold">Recent orders</h3>
-            <p className="text-xs text-muted-foreground">Latest orders across the workshop</p>
+            <h3 className="font-semibold">{t("card.recentOrders")}</h3>
+            <p className="text-xs text-muted-foreground">{t("card.recentOrdersSub")}</p>
           </div>
-          <Button variant="outline" size="sm" asChild><Link to="/orders">View all</Link></Button>
+          <Button variant="outline" size="sm" asChild><Link to="/orders">{t("card.viewAll")}</Link></Button>
         </div>
         {orders.length === 0 ? (
           <div className="rounded-lg border border-dashed p-10 text-center text-sm text-muted-foreground">
-            No orders yet. <Link to="/orders" className="text-primary underline">Create your first order →</Link>
+            {t("empty.orders")} <Link to="/orders" className="text-primary underline">{t("empty.createFirst")}</Link>
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="text-left text-xs uppercase text-muted-foreground">
                 <tr className="border-b">
-                  <th className="py-2 pr-4">Order</th>
-                  <th className="py-2 pr-4">Customer</th>
-                  <th className="py-2 pr-4">Country</th>
-                  <th className="py-2 pr-4">Total</th>
-                  <th className="py-2 pr-4">Status</th>
+                  <th className="py-2 pr-4">{t("table.order")}</th>
+                  <th className="py-2 pr-4">{t("table.customer")}</th>
+                  <th className="py-2 pr-4">{t("table.country")}</th>
+                  <th className="py-2 pr-4">{t("table.total")}</th>
+                  <th className="py-2 pr-4">{t("table.status")}</th>
                 </tr>
               </thead>
               <tbody>
