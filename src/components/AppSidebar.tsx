@@ -9,23 +9,24 @@ import {
 } from "@/components/ui/sidebar";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
+import { useI18n, type TKey } from "@/lib/i18n";
 
 const main = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Orders", url: "/orders", icon: ShoppingCart },
-  { title: "Customers", url: "/customers", icon: Users },
-  { title: "Products", url: "/products", icon: Package },
+  { tkey: "nav.dashboard" as TKey, url: "/", icon: LayoutDashboard },
+  { tkey: "nav.orders" as TKey, url: "/orders", icon: ShoppingCart },
+  { tkey: "nav.customers" as TKey, url: "/customers", icon: Users },
+  { tkey: "nav.products" as TKey, url: "/products", icon: Package },
 ];
 const ops = [
-  { title: "Production", url: "/production", icon: Factory },
-  { title: "Shipping", url: "/shipping", icon: Truck },
-  { title: "Payments", url: "/payments", icon: CreditCard },
-  { title: "Documents", url: "/documents", icon: FileText },
+  { tkey: "nav.production" as TKey, url: "/production", icon: Factory },
+  { tkey: "nav.shipping" as TKey, url: "/shipping", icon: Truck },
+  { tkey: "nav.payments" as TKey, url: "/payments", icon: CreditCard },
+  { tkey: "nav.documents" as TKey, url: "/documents", icon: FileText },
 ];
 const insights = [
-  { title: "Analytics", url: "/analytics", icon: BarChart3 },
-  { title: "Notifications", url: "/notifications", icon: Bell },
-  { title: "Settings", url: "/settings", icon: Settings },
+  { tkey: "nav.analytics" as TKey, url: "/analytics", icon: BarChart3 },
+  { tkey: "nav.notifications" as TKey, url: "/notifications", icon: Bell },
+  { tkey: "nav.settings" as TKey, url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -33,6 +34,7 @@ export function AppSidebar() {
   const collapsed = state === "collapsed";
   const path = useRouterState({ select: (r) => r.location.pathname });
   const { user, signOut } = useAuth();
+  const { t } = useI18n();
   const isActive = (u: string) => u === "/" ? path === "/" : path.startsWith(u);
 
   const renderGroup = (label: string, items: typeof main) => (
