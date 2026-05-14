@@ -73,9 +73,9 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        {renderGroup("Main", main)}
-        {renderGroup("Operations", ops)}
-        {renderGroup("Insights", insights)}
+        {renderGroup(t("nav.main"), main)}
+        {renderGroup(t("nav.operations"), ops)}
+        {renderGroup(t("nav.insights"), insights)}
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border p-3">
         {!collapsed && user && (
