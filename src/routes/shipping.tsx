@@ -20,8 +20,8 @@ function Shipping() {
 
       <div className="grid gap-4 md:grid-cols-4">
         {[
-          { i: Ship, l: "Sea freight", v: 14 }, { i: Plane, l: "Air freight", v: 5 },
-          { i: Truck, l: "Land", v: 2 }, { i: Container, l: "In transit", v: 9 },
+          { i: Ship, l: "Sea freight", v: 0 }, { i: Plane, l: "Air freight", v: 0 },
+          { i: Truck, l: "Land", v: 0 }, { i: Container, l: "In transit", v: 0 },
         ].map(s => (
           <Card key={s.l} className="flex items-center gap-4 p-5 shadow-card">
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground shadow-elegant"><s.i className="h-5 w-5"/></div>

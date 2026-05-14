@@ -24,9 +24,9 @@ function Production() {
 
       <div className="grid gap-4 md:grid-cols-3">
         {[
-          { label: "Capacity used", v: "92%", sub: "Target: 95%", c: "from-primary/15 to-primary/0 text-primary" },
-          { label: "Avg lead time", v: "21 days", sub: "Sprayers + pumps", c: "from-success/15 to-success/0 text-success" },
-          { label: "Today's output", v: "26,500 units", sub: "vs 24,000 yest.", c: "from-warning/20 to-warning/0 text-warning" },
+          { label: "Capacity used", v: "0%", sub: "—", c: "from-primary/15 to-primary/0 text-primary" },
+          { label: "Avg lead time", v: "—", sub: "—", c: "from-success/15 to-success/0 text-success" },
+          { label: "Today's output", v: "0 units", sub: "—", c: "from-warning/20 to-warning/0 text-warning" },
         ].map((s)=>(
           <Card key={s.label} className="relative overflow-hidden p-5 shadow-card">
             <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-60 ${s.c}`}/>
