@@ -85,8 +85,8 @@ function Dashboard() {
         <Card className="lg:col-span-2 p-6 shadow-card">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold">Monthly revenue</h3>
-              <p className="text-xs text-muted-foreground">Last 12 months</p>
+              <h3 className="font-semibold">{t("card.monthlyRevenue")}</h3>
+              <p className="text-xs text-muted-foreground">{t("card.last12")}</p>
             </div>
             <div className="text-right">
               <div className="text-2xl font-semibold">{money(1838000)}</div>
