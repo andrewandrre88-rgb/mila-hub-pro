@@ -47,7 +47,7 @@ export function AppSidebar() {
               <SidebarMenuButton asChild isActive={isActive(it.url)} className="data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-primary data-[active=true]:font-medium hover:bg-sidebar-accent/60">
                 <Link to={it.url} className="flex items-center gap-3">
                   <it.icon className="h-4 w-4 shrink-0" />
-                  {!collapsed && <span>{it.title}</span>}
+                  {!collapsed && <span>{t(it.tkey)}</span>}
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
