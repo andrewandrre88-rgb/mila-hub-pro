@@ -83,7 +83,7 @@ export function AppSidebar() {
             <div className="min-w-0">
               <div className="truncate text-sm text-sidebar-foreground">{user.email}</div>
             </div>
-            <Button size="sm" variant="ghost" onClick={signOut} className="text-sidebar-foreground/70 hover:text-sidebar-foreground">Sign out</Button>
+            <Button size="sm" variant="ghost" onClick={signOut} className="text-sidebar-foreground/70 hover:text-sidebar-foreground">{t("header.signout")}</Button>
           </div>
         )}
       </SidebarFooter>
