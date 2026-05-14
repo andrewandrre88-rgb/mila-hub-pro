@@ -89,8 +89,8 @@ function Dashboard() {
               <p className="text-xs text-muted-foreground">{t("card.last12")}</p>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-semibold">{money(1838000)}</div>
-              <div className="text-xs text-success">↑ 18.2% YoY</div>
+              <div className="text-2xl font-semibold">{money(0)}</div>
+              <div className="text-xs text-muted-foreground">—</div>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={260}>
