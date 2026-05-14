@@ -17,19 +17,19 @@ import {
 export const Route = createFileRoute("/")({ component: () => <DashboardLayout><Dashboard /></DashboardLayout> });
 
 const revenueData = [
-  { m: "Jan", r: 78000 }, { m: "Feb", r: 92000 }, { m: "Mar", r: 115000 },
-  { m: "Apr", r: 104000 }, { m: "May", r: 138000 }, { m: "Jun", r: 162000 },
-  { m: "Jul", r: 154000 }, { m: "Aug", r: 178000 }, { m: "Sep", r: 195000 },
-  { m: "Oct", r: 210000 }, { m: "Nov", r: 188000 }, { m: "Dec", r: 224000 },
+  { m: "Jan", r: 0 }, { m: "Feb", r: 0 }, { m: "Mar", r: 0 },
+  { m: "Apr", r: 0 }, { m: "May", r: 0 }, { m: "Jun", r: 0 },
+  { m: "Jul", r: 0 }, { m: "Aug", r: 0 }, { m: "Sep", r: 0 },
+  { m: "Oct", r: 0 }, { m: "Nov", r: 0 }, { m: "Dec", r: 0 },
 ];
 
 const productionData = [
-  { day: "Mon", sprayers: 18000, pumps: 12000 },
-  { day: "Tue", sprayers: 22000, pumps: 14000 },
-  { day: "Wed", sprayers: 19500, pumps: 13500 },
-  { day: "Thu", sprayers: 24000, pumps: 16000 },
-  { day: "Fri", sprayers: 26500, pumps: 18000 },
-  { day: "Sat", sprayers: 12000, pumps: 8000 },
+  { day: "Mon", sprayers: 0, pumps: 0 },
+  { day: "Tue", sprayers: 0, pumps: 0 },
+  { day: "Wed", sprayers: 0, pumps: 0 },
+  { day: "Thu", sprayers: 0, pumps: 0 },
+  { day: "Fri", sprayers: 0, pumps: 0 },
+  { day: "Sat", sprayers: 0, pumps: 0 },
 ];
 
 const PIE_COLORS = ["oklch(0.52 0.19 260)", "oklch(0.65 0.18 255)", "oklch(0.78 0.15 75)", "oklch(0.65 0.16 155)"];
