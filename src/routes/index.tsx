@@ -145,13 +145,13 @@ function Dashboard() {
         </Card>
 
         <Card className="p-6 shadow-card">
-          <h3 className="font-semibold">Quick stats</h3>
+          <h3 className="font-semibold">{t("card.quickStats")}</h3>
           <div className="mt-4 space-y-4">
             {[
-              { icon: Users, label: "Active customers", v: "184" },
-              { icon: Package, label: "SKUs in stock", v: "76" },
-              { icon: Factory, label: "Production capacity", v: "92%" },
-              { icon: Truck, label: "On-time delivery", v: "98.4%" },
+              { icon: Users, label: t("qs.activeCustomers"), v: "184" },
+              { icon: Package, label: t("qs.skus"), v: "76" },
+              { icon: Factory, label: t("qs.capacity"), v: "92%" },
+              { icon: Truck, label: t("qs.onTime"), v: "98.4%" },
             ].map((s) => (
               <div key={s.label} className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
