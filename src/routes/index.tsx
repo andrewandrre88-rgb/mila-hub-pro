@@ -32,12 +32,6 @@ const productionData = [
   { day: "Sat", sprayers: 12000, pumps: 8000 },
 ];
 
-const shippingPie = [
-  { name: "Sea Freight", value: 58 },
-  { name: "Air Freight", value: 22 },
-  { name: "Express", value: 14 },
-  { name: "Land", value: 6 },
-];
 const PIE_COLORS = ["oklch(0.52 0.19 260)", "oklch(0.65 0.18 255)", "oklch(0.78 0.15 75)", "oklch(0.65 0.16 155)"];
 
 function Dashboard() {
