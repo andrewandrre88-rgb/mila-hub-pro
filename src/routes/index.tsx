@@ -128,8 +128,8 @@ function Dashboard() {
         <Card className="lg:col-span-2 p-6 shadow-card">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold">Production output</h3>
-              <p className="text-xs text-muted-foreground">Units assembled this week</p>
+              <h3 className="font-semibold">{t("card.production")}</h3>
+              <p className="text-xs text-muted-foreground">{t("card.productionSub")}</p>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={240}>
