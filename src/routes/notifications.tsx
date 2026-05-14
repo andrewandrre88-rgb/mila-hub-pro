@@ -19,7 +19,9 @@ function Notifications() {
     <div className="space-y-6">
       <div><h1 className="text-2xl font-semibold">Notifications</h1><p className="text-sm text-muted-foreground">Recent alerts across the workshop</p></div>
       <Card className="divide-y shadow-card">
-        {items.map((n, i) => (
+        {items.length === 0 ? (
+          <div className="p-12 text-center text-sm text-muted-foreground">No notifications yet.</div>
+        ) : items.map((n, i) => (
           <div key={i} className="flex items-start gap-4 p-5 transition-colors hover:bg-muted/30">
             <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${accent[n.c]}`}><n.i className="h-5 w-5"/></div>
             <div className="flex-1">
