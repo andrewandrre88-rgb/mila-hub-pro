@@ -111,8 +111,8 @@ function Dashboard() {
         </Card>
 
         <Card className="p-6 shadow-card">
-          <h3 className="font-semibold">Shipping mix</h3>
-          <p className="text-xs text-muted-foreground">Last 30 days</p>
+          <h3 className="font-semibold">{t("card.shippingMix")}</h3>
+          <p className="text-xs text-muted-foreground">{t("card.last30")}</p>
           <ResponsiveContainer width="100%" height={240}>
             <PieChart>
               <Pie data={shippingPie} dataKey="value" innerRadius={55} outerRadius={85} paddingAngle={2}>
