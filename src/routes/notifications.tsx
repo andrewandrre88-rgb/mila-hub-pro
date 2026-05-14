@@ -5,13 +5,7 @@ import { AlertTriangle, Clock, Package, CreditCard, Truck } from "lucide-react";
 
 export const Route = createFileRoute("/notifications")({ component: () => <DashboardLayout><Notifications/></DashboardLayout> });
 
-const items = [
-  { i: CreditCard, c: "destructive", t: "Late payment", d: "Order MP-104238 — balance overdue 12 days", time: "2h ago" },
-  { i: Clock, c: "warning", t: "Production delayed", d: "MP-104301 (Trigger sprayers) behind schedule by 3 days", time: "5h ago" },
-  { i: Package, c: "primary", t: "New order", d: "BellaCare Cosmetics placed an order for 50,000 lotion pumps", time: "1d ago" },
-  { i: Truck, c: "success", t: "Shipment delivered", d: "MP-103998 cleared customs in Hamburg", time: "1d ago" },
-  { i: AlertTriangle, c: "warning", t: "Low inventory", d: "PET Bottle 500ml below MOQ", time: "2d ago" },
-];
+const items: { i: typeof AlertTriangle; c: string; t: string; d: string; time: string }[] = [];
 
 const accent: Record<string, string> = {
   destructive: "bg-destructive/10 text-destructive",
