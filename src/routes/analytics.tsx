@@ -6,19 +6,12 @@ import { LineChart, Line, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tool
 export const Route = createFileRoute("/analytics")({ component: () => <DashboardLayout><Analytics/></DashboardLayout> });
 
 const sales = [
-  { m:"Jan", v: 78000 }, { m:"Feb", v: 92000 }, { m:"Mar", v: 115000 }, { m:"Apr", v: 104000 },
-  { m:"May", v: 138000 }, { m:"Jun", v: 162000 }, { m:"Jul", v: 154000 }, { m:"Aug", v: 178000 },
-  { m:"Sep", v: 195000 }, { m:"Oct", v: 210000 }, { m:"Nov", v: 188000 }, { m:"Dec", v: 224000 },
+  { m:"Jan", v: 0 }, { m:"Feb", v: 0 }, { m:"Mar", v: 0 }, { m:"Apr", v: 0 },
+  { m:"May", v: 0 }, { m:"Jun", v: 0 }, { m:"Jul", v: 0 }, { m:"Aug", v: 0 },
+  { m:"Sep", v: 0 }, { m:"Oct", v: 0 }, { m:"Nov", v: 0 }, { m:"Dec", v: 0 },
 ];
-const products = [
-  { p: "Trigger Sprayer 28/410", v: 480000 }, { p: "Lotion Pump 24/410", v: 320000 },
-  { p: "Mist Sprayer 20/410", v: 240000 }, { p: "Foam Pump 40mm", v: 195000 },
-  { p: "PET Bottle 500ml", v: 150000 },
-];
-const countries = [
-  { c: "USA", v: 38 }, { c: "Germany", v: 22 }, { c: "Brazil", v: 14 },
-  { c: "UAE", v: 11 }, { c: "Mexico", v: 8 }, { c: "France", v: 7 },
-];
+const products: { p: string; v: number }[] = [];
+const countries: { c: string; v: number }[] = [];
 
 function Analytics() {
   return (

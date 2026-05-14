@@ -17,19 +17,19 @@ import {
 export const Route = createFileRoute("/")({ component: () => <DashboardLayout><Dashboard /></DashboardLayout> });
 
 const revenueData = [
-  { m: "Jan", r: 78000 }, { m: "Feb", r: 92000 }, { m: "Mar", r: 115000 },
-  { m: "Apr", r: 104000 }, { m: "May", r: 138000 }, { m: "Jun", r: 162000 },
-  { m: "Jul", r: 154000 }, { m: "Aug", r: 178000 }, { m: "Sep", r: 195000 },
-  { m: "Oct", r: 210000 }, { m: "Nov", r: 188000 }, { m: "Dec", r: 224000 },
+  { m: "Jan", r: 0 }, { m: "Feb", r: 0 }, { m: "Mar", r: 0 },
+  { m: "Apr", r: 0 }, { m: "May", r: 0 }, { m: "Jun", r: 0 },
+  { m: "Jul", r: 0 }, { m: "Aug", r: 0 }, { m: "Sep", r: 0 },
+  { m: "Oct", r: 0 }, { m: "Nov", r: 0 }, { m: "Dec", r: 0 },
 ];
 
 const productionData = [
-  { day: "Mon", sprayers: 18000, pumps: 12000 },
-  { day: "Tue", sprayers: 22000, pumps: 14000 },
-  { day: "Wed", sprayers: 19500, pumps: 13500 },
-  { day: "Thu", sprayers: 24000, pumps: 16000 },
-  { day: "Fri", sprayers: 26500, pumps: 18000 },
-  { day: "Sat", sprayers: 12000, pumps: 8000 },
+  { day: "Mon", sprayers: 0, pumps: 0 },
+  { day: "Tue", sprayers: 0, pumps: 0 },
+  { day: "Wed", sprayers: 0, pumps: 0 },
+  { day: "Thu", sprayers: 0, pumps: 0 },
+  { day: "Fri", sprayers: 0, pumps: 0 },
+  { day: "Sat", sprayers: 0, pumps: 0 },
 ];
 
 const PIE_COLORS = ["oklch(0.52 0.19 260)", "oklch(0.65 0.18 255)", "oklch(0.78 0.15 75)", "oklch(0.65 0.16 155)"];
@@ -37,10 +37,10 @@ const PIE_COLORS = ["oklch(0.52 0.19 260)", "oklch(0.65 0.18 255)", "oklch(0.78 
 function Dashboard() {
   const { t, money } = useI18n();
   const shippingPie = [
-    { name: t("ship.sea"), value: 58 },
-    { name: t("ship.air"), value: 22 },
-    { name: t("ship.express"), value: 14 },
-    { name: t("ship.land"), value: 6 },
+    { name: t("ship.sea"), value: 0 },
+    { name: t("ship.air"), value: 0 },
+    { name: t("ship.express"), value: 0 },
+    { name: t("ship.land"), value: 0 },
   ];
   const { data: orders = [] } = useQuery({
     queryKey: ["orders-overview"],
@@ -75,10 +75,10 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <StatCard label={t("stat.totalOrders")} value={stats?.total ?? 0} delta="12.4%" trend="up" icon={ShoppingCart} accent="primary" />
-        <StatCard label={t("stat.inProduction")} value={stats?.prod ?? 0} delta="3.1%" trend="up" icon={Factory} accent="warning" />
-        <StatCard label={t("stat.shipped")} value={stats?.shipped ?? 0} delta="8.7%" trend="up" icon={Truck} accent="success" />
-        <StatCard label={t("stat.pendingPayments")} value={money(stats?.pending ?? 0)} delta="2.3%" trend="down" icon={CreditCard} accent="destructive" />
+        <StatCard label={t("stat.totalOrders")} value={stats?.total ?? 0} delta="0%" trend="up" icon={ShoppingCart} accent="primary" />
+        <StatCard label={t("stat.inProduction")} value={stats?.prod ?? 0} delta="0%" trend="up" icon={Factory} accent="warning" />
+        <StatCard label={t("stat.shipped")} value={stats?.shipped ?? 0} delta="0%" trend="up" icon={Truck} accent="success" />
+        <StatCard label={t("stat.pendingPayments")} value={money(stats?.pending ?? 0)} delta="0%" trend="down" icon={CreditCard} accent="destructive" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -89,8 +89,8 @@ function Dashboard() {
               <p className="text-xs text-muted-foreground">{t("card.last12")}</p>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-semibold">{money(1838000)}</div>
-              <div className="text-xs text-success">↑ 18.2% YoY</div>
+              <div className="text-2xl font-semibold">{money(0)}</div>
+              <div className="text-xs text-muted-foreground">—</div>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={260}>
@@ -148,10 +148,10 @@ function Dashboard() {
           <h3 className="font-semibold">{t("card.quickStats")}</h3>
           <div className="mt-4 space-y-4">
             {[
-              { icon: Users, label: t("qs.activeCustomers"), v: "184" },
-              { icon: Package, label: t("qs.skus"), v: "76" },
-              { icon: Factory, label: t("qs.capacity"), v: "92%" },
-              { icon: Truck, label: t("qs.onTime"), v: "98.4%" },
+              { icon: Users, label: t("qs.activeCustomers"), v: "0" },
+              { icon: Package, label: t("qs.skus"), v: "0" },
+              { icon: Factory, label: t("qs.capacity"), v: "0%" },
+              { icon: Truck, label: t("qs.onTime"), v: "0%" },
             ].map((s) => (
               <div key={s.label} className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">

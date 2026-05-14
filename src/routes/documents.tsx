@@ -11,11 +11,11 @@ import { useAuth } from "@/lib/auth";
 export const Route = createFileRoute("/documents")({ component: () => <DashboardLayout><Documents/></DashboardLayout> });
 
 const cats = [
-  { name: "Invoices", count: 84, color: "from-primary/20 to-primary/0" },
-  { name: "Packing Lists", count: 56, color: "from-success/20 to-success/0" },
-  { name: "Contracts", count: 23, color: "from-warning/20 to-warning/0" },
-  { name: "Product Photos", count: 412, color: "from-chart-4/20 to-chart-4/0" },
-  { name: "Shipping Docs", count: 67, color: "from-destructive/20 to-destructive/0" },
+  { name: "Invoices", count: 0, color: "from-primary/20 to-primary/0" },
+  { name: "Packing Lists", count: 0, color: "from-success/20 to-success/0" },
+  { name: "Contracts", count: 0, color: "from-warning/20 to-warning/0" },
+  { name: "Product Photos", count: 0, color: "from-chart-4/20 to-chart-4/0" },
+  { name: "Shipping Docs", count: 0, color: "from-destructive/20 to-destructive/0" },
 ];
 
 type FileRow = { name: string; path: string; size: number; updated_at: string };
