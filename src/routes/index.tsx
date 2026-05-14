@@ -103,7 +103,7 @@ function Dashboard() {
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.92 0.01 252)" vertical={false}/>
               <XAxis dataKey="m" axisLine={false} tickLine={false} tick={{ fill: "oklch(0.5 0.02 252)", fontSize: 12 }}/>
-              <YAxis axisLine={false} tickLine={false} tick={{ fill: "oklch(0.5 0.02 252)", fontSize: 12 }} tickFormatter={(v)=>`$${v/1000}k`}/>
+              <YAxis axisLine={false} tickLine={false} tick={{ fill: "oklch(0.5 0.02 252)", fontSize: 12 }} tickFormatter={(v)=>`${v/1000}k`}/>
               <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid oklch(0.92 0.01 252)" }} formatter={(v: number)=>money(v)}/>
               <Area type="monotone" dataKey="r" stroke="oklch(0.52 0.19 260)" strokeWidth={2.5} fill="url(#rev)"/>
             </AreaChart>
