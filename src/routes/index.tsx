@@ -68,17 +68,17 @@ function Dashboard() {
     <div className="space-y-6">
       <div className="flex items-end justify-between">
         <div>
-          <h1 className="text-2xl font-semibold">Operations overview</h1>
-          <p className="text-sm text-muted-foreground">Welcome back. Here's what's happening at the factory today.</p>
+          <h1 className="text-2xl font-semibold">{t("dash.title")}</h1>
+          <p className="text-sm text-muted-foreground">{t("dash.subtitle")}</p>
         </div>
-        <Button asChild className="bg-gradient-primary shadow-elegant"><Link to="/orders">+ New order</Link></Button>
+        <Button asChild className="bg-gradient-primary shadow-elegant"><Link to="/orders">{t("dash.newOrder")}</Link></Button>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <StatCard label="Total orders" value={stats?.total ?? 0} delta="12.4%" trend="up" icon={ShoppingCart} accent="primary" />
-        <StatCard label="In production" value={stats?.prod ?? 0} delta="3.1%" trend="up" icon={Factory} accent="warning" />
-        <StatCard label="Shipped" value={stats?.shipped ?? 0} delta="8.7%" trend="up" icon={Truck} accent="success" />
-        <StatCard label="Pending payments" value={money(stats?.pending ?? 0)} delta="2.3%" trend="down" icon={CreditCard} accent="destructive" />
+        <StatCard label={t("stat.totalOrders")} value={stats?.total ?? 0} delta="12.4%" trend="up" icon={ShoppingCart} accent="primary" />
+        <StatCard label={t("stat.inProduction")} value={stats?.prod ?? 0} delta="3.1%" trend="up" icon={Factory} accent="warning" />
+        <StatCard label={t("stat.shipped")} value={stats?.shipped ?? 0} delta="8.7%" trend="up" icon={Truck} accent="success" />
+        <StatCard label={t("stat.pendingPayments")} value={money(stats?.pending ?? 0)} delta="2.3%" trend="down" icon={CreditCard} accent="destructive" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
