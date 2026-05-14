@@ -9,23 +9,24 @@ import {
 } from "@/components/ui/sidebar";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
+import { useI18n, type TKey } from "@/lib/i18n";
 
 const main = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Orders", url: "/orders", icon: ShoppingCart },
-  { title: "Customers", url: "/customers", icon: Users },
-  { title: "Products", url: "/products", icon: Package },
+  { tkey: "nav.dashboard" as TKey, url: "/", icon: LayoutDashboard },
+  { tkey: "nav.orders" as TKey, url: "/orders", icon: ShoppingCart },
+  { tkey: "nav.customers" as TKey, url: "/customers", icon: Users },
+  { tkey: "nav.products" as TKey, url: "/products", icon: Package },
 ];
 const ops = [
-  { title: "Production", url: "/production", icon: Factory },
-  { title: "Shipping", url: "/shipping", icon: Truck },
-  { title: "Payments", url: "/payments", icon: CreditCard },
-  { title: "Documents", url: "/documents", icon: FileText },
+  { tkey: "nav.production" as TKey, url: "/production", icon: Factory },
+  { tkey: "nav.shipping" as TKey, url: "/shipping", icon: Truck },
+  { tkey: "nav.payments" as TKey, url: "/payments", icon: CreditCard },
+  { tkey: "nav.documents" as TKey, url: "/documents", icon: FileText },
 ];
 const insights = [
-  { title: "Analytics", url: "/analytics", icon: BarChart3 },
-  { title: "Notifications", url: "/notifications", icon: Bell },
-  { title: "Settings", url: "/settings", icon: Settings },
+  { tkey: "nav.analytics" as TKey, url: "/analytics", icon: BarChart3 },
+  { tkey: "nav.notifications" as TKey, url: "/notifications", icon: Bell },
+  { tkey: "nav.settings" as TKey, url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -33,6 +34,7 @@ export function AppSidebar() {
   const collapsed = state === "collapsed";
   const path = useRouterState({ select: (r) => r.location.pathname });
   const { user, signOut } = useAuth();
+  const { t } = useI18n();
   const isActive = (u: string) => u === "/" ? path === "/" : path.startsWith(u);
 
   const renderGroup = (label: string, items: typeof main) => (
@@ -45,7 +47,7 @@ export function AppSidebar() {
               <SidebarMenuButton asChild isActive={isActive(it.url)} className="data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-primary data-[active=true]:font-medium hover:bg-sidebar-accent/60">
                 <Link to={it.url} className="flex items-center gap-3">
                   <it.icon className="h-4 w-4 shrink-0" />
-                  {!collapsed && <span>{it.title}</span>}
+                  {!collapsed && <span>{t(it.tkey)}</span>}
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -71,9 +73,9 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        {renderGroup("Main", main)}
-        {renderGroup("Operations", ops)}
-        {renderGroup("Insights", insights)}
+        {renderGroup(t("nav.main"), main)}
+        {renderGroup(t("nav.operations"), ops)}
+        {renderGroup(t("nav.insights"), insights)}
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border p-3">
         {!collapsed && user && (
@@ -81,7 +83,7 @@ export function AppSidebar() {
             <div className="min-w-0">
               <div className="truncate text-sm text-sidebar-foreground">{user.email}</div>
             </div>
-            <Button size="sm" variant="ghost" onClick={signOut} className="text-sidebar-foreground/70 hover:text-sidebar-foreground">Sign out</Button>
+            <Button size="sm" variant="ghost" onClick={signOut} className="text-sidebar-foreground/70 hover:text-sidebar-foreground">{t("header.signout")}</Button>
           </div>
         )}
       </SidebarFooter>
