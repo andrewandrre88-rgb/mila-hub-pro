@@ -1,0 +1,8 @@
+[build]
+  command = "bun install && bun run build"
+  publish = "dist"
+
+[build.environment]
+  # Force Bun to avoid the npm Rollup optional-binary bug
+  # (npm sometimes fails to install @rollup/rollup-linux-x64-gnu).
+  NPM_FLAGS = "--version"
