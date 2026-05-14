@@ -37,10 +37,10 @@ const PIE_COLORS = ["oklch(0.52 0.19 260)", "oklch(0.65 0.18 255)", "oklch(0.78 
 function Dashboard() {
   const { t, money } = useI18n();
   const shippingPie = [
-    { name: t("ship.sea"), value: 58 },
-    { name: t("ship.air"), value: 22 },
-    { name: t("ship.express"), value: 14 },
-    { name: t("ship.land"), value: 6 },
+    { name: t("ship.sea"), value: 0 },
+    { name: t("ship.air"), value: 0 },
+    { name: t("ship.express"), value: 0 },
+    { name: t("ship.land"), value: 0 },
   ];
   const { data: orders = [] } = useQuery({
     queryKey: ["orders-overview"],
