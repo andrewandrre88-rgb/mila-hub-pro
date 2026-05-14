@@ -75,10 +75,10 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <StatCard label={t("stat.totalOrders")} value={stats?.total ?? 0} delta="12.4%" trend="up" icon={ShoppingCart} accent="primary" />
-        <StatCard label={t("stat.inProduction")} value={stats?.prod ?? 0} delta="3.1%" trend="up" icon={Factory} accent="warning" />
-        <StatCard label={t("stat.shipped")} value={stats?.shipped ?? 0} delta="8.7%" trend="up" icon={Truck} accent="success" />
-        <StatCard label={t("stat.pendingPayments")} value={money(stats?.pending ?? 0)} delta="2.3%" trend="down" icon={CreditCard} accent="destructive" />
+        <StatCard label={t("stat.totalOrders")} value={stats?.total ?? 0} delta="0%" trend="up" icon={ShoppingCart} accent="primary" />
+        <StatCard label={t("stat.inProduction")} value={stats?.prod ?? 0} delta="0%" trend="up" icon={Factory} accent="warning" />
+        <StatCard label={t("stat.shipped")} value={stats?.shipped ?? 0} delta="0%" trend="up" icon={Truck} accent="success" />
+        <StatCard label={t("stat.pendingPayments")} value={money(stats?.pending ?? 0)} delta="0%" trend="down" icon={CreditCard} accent="destructive" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
