@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { ShoppingCart, Factory, Truck, CreditCard, Package, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { money } from "@/lib/format";
+import { useI18n } from "@/lib/i18n";
 import { StatusBadge } from "@/components/StatusBadge";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
